@@ -85,6 +85,10 @@ export class ChannelService {
     });
   }
 
+  public showCommandWithTimestamp(commandName: string) {
+    this.channel.appendLine(this.getExecutionTime() + ' ' + commandName);
+  }
+
   private getExecutionTime() {
     const d = new Date();
     const hr = this.ensureDoubleDigits(d.getHours());
